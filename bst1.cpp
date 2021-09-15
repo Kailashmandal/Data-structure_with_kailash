@@ -12,6 +12,7 @@ struct node
          left=NULL;
          right=NULL;
     }
+
     /* data */
 };
 
