@@ -49,6 +49,19 @@ node* LCA(node* root,int n1,int n2){
  else return root; // lca is founded !
 
 }
+
+void nthSmallestnode(node* root, int k, int idx){
+    if(!root) return ;
+
+    nthSmallestnode(root->left, k,idx);
+    if(k==idx){
+        cout<<root->data ;
+        idx++;
+        return ;
+    }else idx++;
+
+    nthSmallestnode(root->right,k,idx);
+}
 int main(int argc, char const *argv[])
 {
     node * root =NULL;
@@ -59,7 +72,5 @@ int main(int argc, char const *argv[])
         /* code */
     }
     
-    int lca=LCA(root,2,8)->data;
-    cout<<"lca is : "<<lca;
-    return 0;
+  nthSmallestnode(root,4,1);
 }
