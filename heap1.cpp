@@ -13,17 +13,17 @@ public:
   int cap; // capacity of the heap
   int size ; // size of the heap
   
-  Minheap(int capacity){
+  Minheap(int capacity){  // constructor
       hrr=new int[capacity];
       cap=capacity;
       size=0;
   }
 
-  int parentIdx(int i){
+  int parentIdx(int i){ // returns the index of parent
       return (i-1)/2;
   }
  
- void insert(int key){
+ void insert(int key){ // insertion function
      if(size==cap){
          cout<<"heap overflow ! ";
          return ;
@@ -39,10 +39,10 @@ public:
          i=parentIdx(i);
      }
  }
- int left(int i){
+ int left(int i){ // returns index of left child
      return 2*i+1;
  }
- int right(int i){
+ int right(int i){  // return ind of right child
      return 2*i+2;
  }
 
@@ -60,14 +60,15 @@ public:
      if(r< size && hrr[l]<hrr[i]){
          smallest=r;
      }
-
+     // samllest is found 
      if(smallest!=i){
+         // swaping with samllest and current root 
           swap(&hrr[i],&hrr[smallest]);
           Heapify(smallest);
      }
  }
 
- int extractMin(){
+ int extractMin(){ // delete and returns the minimum element
      if(size<=0) return -1;
 
      if(size==1) {
