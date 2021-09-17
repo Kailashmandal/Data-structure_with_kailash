@@ -102,6 +102,14 @@ int main(int argc, char const *argv[])
     h.insert(5);
     h.insert(4);
     h.insert(1);
-    cout<<h.Size();
+    h.insert(10);
+    h.insert(9);
+    h.insert(8);
+    h.insert(7);
+  cout<<"printing heap\n";
+  for(int i=0;i<10;i++){
+      cout<<h.extractMin()<<" ";
+  }
+
     return 0;
 }
